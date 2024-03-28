@@ -250,16 +250,22 @@ main section:nth-of-type(1) .right::before {
   left: -36px;
 }
 main section:nth-of-type(1) .right > svg:hover {
-  animation: bell 0.5s infinite;
+  animation: bell 0.7s;
 }
 @keyframes bell {
   0%,
-  50%,
+  20%,
+  40%,
+  60%,
+  80%,
   100% {
     transform: rotate(3deg);
   }
-  25%,
-  75% {
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
     transform: rotate(-3deg);
   }
 }
@@ -298,15 +304,99 @@ main section:nth-of-type(3) h2::before {
   top: 0;
   right: -100px;
 }
-main section:nth-of-type(3) > div > div {
-  display: grid;
+main section:nth-of-type(3) .box {
+  display: flex;
+  flex-wrap: wrap;
+  border: 3px solid var(--black);
+  border-right: 0;
 }
-main section:nth-of-type(3) > div > div > * {
-  border: 1px solid red;
+main section:nth-of-type(3) .item {
+  width: 33.33%;
+}
+main section:nth-of-type(3) .item1,
+main section:nth-of-type(3) .item2 {
+}
+main section:nth-of-type(3) .item1 {
+  order: 1;
+}
+main section:nth-of-type(3) .item2 {
+  order: 4;
+}
+main section:nth-of-type(3) .item3 {
+  order: 2;
+}
+main section:nth-of-type(3) .item4 {
+  order: 3;
+}
+main section:nth-of-type(3) .item5 {
+  order: 5;
+}
+main section:nth-of-type(3) .item6 {
+  order: 6;
+}
+main section:nth-of-type(3) .item p {
+  font-family: 'space grotesk';
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.5;
+}
+main section:nth-of-type(3) .item1 p span,
+main section:nth-of-type(3) .item2 p span {
+  display: block;
+  font-size: 48px;
+  line-height: 1;
+}
+main section:nth-of-type(3) .item h3 {
+  font-family: 'space grotesk';
+  font-weight: 700;
+  font-size: 36px;
+  padding: 50px 20px 40px 20px;
+}
+main section:nth-of-type(3) .item3 p,
+main section:nth-of-type(3) .item4 p,
+main section:nth-of-type(3) .item5 p,
+main section:nth-of-type(3) .item6 p {
+  padding: 0 20px 70px 20px;
+}
+main section:nth-of-type(3) .item a {
+  display: block;
+  font-family: 'space grotesk';
+  font-weight: 500;
+  font-size: 36px;
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+  padding: 40px 20px;
+}
+main section:nth-of-type(3) .item5 a,
+main section:nth-of-type(3) .item6 a {
+  border-bottom: 0;
 }
 
 main section:nth-of-type(4) {
 }
+main section:nth-of-type(4) h2 {
+  text-align: center;
+  font-family: 'space grotesk';
+  font-weight: 700;
+  font-size: 80px;
+}
+main section:nth-of-type(4) h2 span {
+  position: relative;
+}
+
+main section:nth-of-type(4) h2 span::before {
+  content: url('../img/Vector-3.svg');
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+}
+main section:nth-of-type(4) h2 span::after {
+  content: url('../img/Frame\ 95473.svg');
+  position: absolute;
+  right: -180px;
+  bottom: -40px;
+}
+
 main section:nth-of-type(5) {
 }
 main section:nth-of-type(6) {
