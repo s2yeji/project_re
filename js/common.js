@@ -1,29 +1,28 @@
 let nav = document.querySelector('nav');
-let ham = document.createElement('button');
+let ham = nav.querySelector('.ham');
 
-ham.classList.add('ham');
-ham.innerHTML = '<span></span><span></span><span></span>';
-nav.appendChild(ham);
+ham.addEventListener('click', function () {
+  ham.classList.toggle('open');
+  if (ham.classList.contains('open')) {
+    nav.classList.add('on');
+  } else {
+    nav.classList.remove('on');
+  }
+});
 
 window.addEventListener('resize', function () {
   let windowSize = window.innerWidth;
 
   const sec3 = document.querySelector('.sec3');
-  if (windowSize < 850) {
+  if (windowSize <= 850) {
     sec3.classList.add('mw');
   } else {
     sec3.classList.remove('mw');
   }
 
-  if (windowSize < 800) {
-    if (!document.querySelector('.ham')) {
-      nav.appendChild(ham);
-    }
-    nav.classList.add('on');
+  if (windowSize <= 800) {
+    ham.style.display = 'flex';
   } else {
-    if (document.querySelector('.ham')) {
-      nav.removeChild(ham);
-    }
-    nav.classList.remove('on');
+    ham.style.display = 'none';
   }
 });
